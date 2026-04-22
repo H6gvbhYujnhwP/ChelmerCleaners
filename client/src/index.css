@@ -1,3 +1,10 @@
+/* 
+  CHELMER CLEANERS — Design System
+  Philosophy: "Clean Lines, Bright Skies"
+  Palette: Sky Blue #29ABE2 | Navy #1B3A6B | Orange #F7941D | Green #39B54A | White #FFFFFF
+  Fonts: Nunito (headings/logo) + Open Sans (body)
+*/
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -40,77 +47,49 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand colours */
+  --color-sky: #29ABE2;
+  --color-navy: #1B3A6B;
+  --color-orange: #F7941D;
+  --color-green: #39B54A;
+  --color-cloud: #EEF8FD;
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
+  --radius: 0.75rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
+  --foreground: oklch(0.18 0.04 250);
+  --card: oklch(0.98 0.005 220);
+  --card-foreground: oklch(0.18 0.04 250);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  --popover-foreground: oklch(0.18 0.04 250);
+  --primary: oklch(0.58 0.16 220);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.93 0.03 220);
+  --secondary-foreground: oklch(0.18 0.04 250);
+  --muted: oklch(0.95 0.01 220);
+  --muted-foreground: oklch(0.52 0.04 220);
+  --accent: oklch(0.72 0.17 55);
+  --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
-
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --border: oklch(0.88 0.02 220);
+  --input: oklch(0.88 0.02 220);
+  --ring: oklch(0.58 0.16 220);
+  --chart-1: oklch(0.58 0.16 220);
+  --chart-2: oklch(0.72 0.17 55);
+  --chart-3: oklch(0.62 0.18 145);
+  --chart-4: oklch(0.25 0.06 250);
+  --chart-5: oklch(0.85 0.12 55);
+  --sidebar: oklch(0.25 0.06 250);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.58 0.16 220);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.35 0.06 250);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.35 0.06 250);
+  --sidebar-ring: oklch(0.58 0.16 220);
 }
 
 @layer base {
@@ -119,6 +98,10 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -134,24 +117,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,16 +132,158 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
+  }
+
+  /* Brand utility classes */
+  .bg-sky { background-color: #29ABE2; }
+  .bg-navy { background-color: #1B3A6B; }
+  .bg-orange { background-color: #F7941D; }
+  .bg-brand-green { background-color: #39B54A; }
+  .bg-cloud { background-color: #EEF8FD; }
+  .text-sky { color: #29ABE2; }
+  .text-navy { color: #1B3A6B; }
+  .text-orange { color: #F7941D; }
+  .text-brand-green { color: #39B54A; }
+
+  .btn-orange {
+    background-color: #F7941D;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s, transform 0.15s;
+    text-decoration: none;
+    border: none;
+    font-size: 1rem;
+  }
+  .btn-orange:hover {
+    background-color: #e07d0a;
+    transform: translateY(-1px);
+  }
+
+  .btn-navy {
+    background-color: #1B3A6B;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s, transform 0.15s;
+    text-decoration: none;
+    border: none;
+    font-size: 1rem;
+  }
+  .btn-navy:hover {
+    background-color: #122a50;
+    transform: translateY(-1px);
+  }
+
+  /* Cloud wave divider */
+  .cloud-divider {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .cloud-divider svg {
+    display: block;
+    width: 100%;
+  }
+
+  /* Phone number hero style */
+  .phone-hero {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    color: #39B54A;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+  .phone-hero:hover {
+    color: #2d9a3e;
+  }
+
+  /* Sticky call bar */
+  .sticky-call-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #39B54A;
+    color: white;
+    text-align: center;
+    padding: 0.875rem 1rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    z-index: 50;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+  @media (min-width: 768px) {
+    .sticky-call-bar {
+      display: none;
+    }
+  }
+
+  /* Service card */
+  .service-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 16px rgba(27,58,107,0.08);
+    border: 1px solid #e8f4fb;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(27,58,107,0.14);
+  }
+
+  /* Price table */
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .price-table th {
+    background-color: #1B3A6B;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+  .price-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e8f4fb;
+  }
+  .price-table tr:nth-child(even) td {
+    background-color: #f0f9ff;
+  }
+  .price-table tr:last-child td {
+    border-bottom: none;
   }
 }
