@@ -78,12 +78,29 @@ export default function Home() {
 
               {/* Phone number — the hero CTA */}
               <div style={{ marginBottom: "1.5rem" }}>
-                <p style={{ color: "rgba(255,255,255,0.8)", fontFamily: "Nunito, sans-serif", fontWeight: 600, fontSize: "0.9rem", marginBottom: "0.35rem" }}>
-                  Call or Text Sandra to Book:
-                </p>
-                <a href="tel:07855716659" className="phone-hero" style={{ textAlign: "left", fontSize: "clamp(2rem, 9vw, 3rem)" }}>
-                  07855 716659
-                </a>
+                <div style={{
+                  backgroundColor: "white",
+                  borderRadius: "0.875rem",
+                  padding: "1rem 1.25rem",
+                  display: "inline-block",
+                  boxShadow: "0 4px 16px rgba(27,58,107,0.18)",
+                }}>
+                  <p style={{ color: "#555", fontFamily: "Nunito, sans-serif", fontWeight: 600, fontSize: "0.85rem", marginBottom: "0.25rem" }}>
+                    Call or Text Sandra to Book:
+                  </p>
+                  <a href="tel:07855716659" style={{
+                    fontFamily: "Nunito, sans-serif",
+                    fontWeight: 900,
+                    color: "#1B3A6B",
+                    fontSize: "clamp(1.75rem, 8vw, 2.75rem)",
+                    textDecoration: "none",
+                    display: "block",
+                    letterSpacing: "-0.02em",
+                    lineHeight: 1.1,
+                  }}>
+                    07855 716659
+                  </a>
+                </div>
               </div>
 
               <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
