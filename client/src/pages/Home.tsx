@@ -13,15 +13,17 @@ const DELIVERY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/N
 
 const services = [
   { icon: "👔", label: "Dry Cleaning" },
-  { icon: "🪟", label: "Curtains" },
+  { icon: "🪟", label: "Curtains & Covers" },
   { icon: "🛏️", label: "Duvets" },
+  { icon: "🌿", label: "Duvet & Bedding" },
+  { icon: "💍", label: "Wedding & Prom Dresses" },
   { icon: "🧺", label: "Service Washing" },
   { icon: "🧹", label: "Ironing" },
   { icon: "🪡", label: "Repairs & Alterations" },
 ];
 
 const steps = [
-  { num: "1", title: "Book a Slot", desc: "Choose a convenient collection time online or call Sandra directly." },
+  { num: "1", title: "Get in Touch", desc: "Call or text Sandra to arrange a convenient collection time that suits you." },
   { num: "2", title: "We Collect", desc: "Sandra collects your items from your doorstep — no need to go anywhere." },
   { num: "3", title: "We Clean", desc: "Your items are professionally cleaned, pressed, and packaged." },
   { num: "4", title: "We Deliver", desc: "Your fresh, clean items are returned straight to your door." },
@@ -57,7 +59,7 @@ export default function Home() {
                 textTransform: "uppercase",
                 letterSpacing: "0.06em",
               }}>
-                <Truck size={14} /> Free Delivery on Orders Over £15
+                <Truck size={14} /> Free Delivery on Orders Over £20
               </div>
 
               <h1 style={{
@@ -278,13 +280,86 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── OUR STORY ── */}
+      <section style={{ backgroundColor: "#EEF8FD", paddingTop: "3.5rem", paddingBottom: "3.5rem" }}>
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "2rem", alignItems: "center" }} className="story-grid">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.4rem",
+                backgroundColor: "#1B3A6B",
+                color: "white",
+                fontFamily: "Nunito, sans-serif",
+                fontWeight: 700,
+                fontSize: "0.8rem",
+                padding: "0.3rem 0.85rem",
+                borderRadius: "9999px",
+                marginBottom: "1rem",
+                textTransform: "uppercase" as const,
+                letterSpacing: "0.06em",
+              }}>
+                ❤️ A Family Business
+              </div>
+              <h2 style={{ fontFamily: "Nunito, sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem, 5vw, 2.25rem)", color: "#1B3A6B", lineHeight: 1.2, marginBottom: "1.25rem" }}>
+                Built on Care, Carried with Pride
+              </h2>
+              <p style={{ color: "#444", lineHeight: 1.75, fontSize: "0.97rem", marginBottom: "1rem" }}>
+                Chelmer Cleaners has always been more than just a cleaning service — it’s a family story. Sandra had the privilege of working alongside her father in the business, learning the trade from someone who took real pride in every garment returned to a customer. Those values of care, attention to detail, and genuine personal service were passed down with every lesson.
+              </p>
+              <p style={{ color: "#444", lineHeight: 1.75, fontSize: "0.97rem", marginBottom: "1.5rem" }}>
+                Today, Sandra carries that legacy forward. Chelmer Cleaners remains a local, personal service — no call centres, no drop-off points, just Sandra collecting from your door and returning everything clean, fresh, and perfectly cared for. When you use Chelmer Cleaners, you’re not just a customer; you’re part of a tradition built on trust.
+              </p>
+              <a href="tel:07855716659" className="btn-orange">
+                <Phone size={16} /> Call Sandra
+              </a>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.97 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              style={{
+                backgroundColor: "white",
+                borderRadius: "1.25rem",
+                padding: "2rem",
+                boxShadow: "0 4px 24px rgba(27,58,107,0.1)",
+                textAlign: "center" as const,
+              }}
+            >
+              <div style={{ fontSize: "4rem", marginBottom: "1rem" }}>🧳</div>
+              <blockquote style={{
+                fontFamily: "Nunito, sans-serif",
+                fontStyle: "italic",
+                fontSize: "1.1rem",
+                color: "#1B3A6B",
+                lineHeight: 1.65,
+                margin: "0 0 1rem",
+                fontWeight: 600,
+              }}>
+                &ldquo;I learned this trade from my father, and I carry it on with the same care and pride he always showed. Every item matters.&rdquo;
+              </blockquote>
+              <p style={{ fontFamily: "Nunito, sans-serif", fontWeight: 800, color: "#F7941D", fontSize: "0.95rem" }}>
+                — Sandra, Chelmer Cleaners
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ── TRUST STRIP ── */}
       <section style={{ backgroundColor: "#1B3A6B", paddingTop: "2rem", paddingBottom: "2rem" }}>
         <div className="container">
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1.5rem 2.5rem" }}>
             {[
               { icon: <Star size={20} fill="#F7941D" color="#F7941D" />, text: "5-Star Local Service" },
-              { icon: <Truck size={20} color="#29ABE2" />, text: "Free Delivery Over £15" },
+              { icon: <Truck size={20} color="#29ABE2" />, text: "Free Delivery Over £20" },
               { icon: <CheckCircle size={20} color="#39B54A" />, text: "Fully Insured" },
               { icon: <Phone size={20} color="#F7941D" />, text: "Call or Text to Book" },
             ].map((item, i) => (
@@ -306,9 +381,10 @@ export default function Home() {
       <style>{`
         @media (min-width: 768px) {
           .hero-grid { grid-template-columns: 1fr 1fr !important; }
-          .services-grid { grid-template-columns: repeat(3, 1fr) !important; }
+          .services-grid { grid-template-columns: repeat(4, 1fr) !important; }
           .steps-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .cta-grid { grid-template-columns: 1fr 1fr !important; }
+          .story-grid { grid-template-columns: 1fr 1fr !important; }
         }
       `}</style>
     </div>

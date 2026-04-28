@@ -19,20 +19,32 @@ const services = [
   },
   {
     icon: "🪟",
-    title: "Curtains",
-    desc: "Full curtain cleaning service — we handle all sizes and fabrics. Collected, cleaned, and returned ready to rehang.",
+    title: "Curtains & Covers",
+    desc: "Full cleaning service for curtains of all sizes and fabrics, plus sofa cushion covers, scatter cushions, and garden furniture covers. Collected, cleaned, and returned ready to use.",
     badge: null,
   },
   {
     icon: "🛏️",
-    title: "Duvets",
-    desc: "Thorough duvet cleaning for all tog ratings and sizes. We ensure your duvet is hygienically clean and fresh.",
+    title: "Duvets — Laundered & Packaged",
+    desc: "Thorough duvet cleaning for all tog ratings and sizes — feather or hollowfibre. Every duvet is hygienically laundered and returned neatly packaged in a duvet bag, fresh and ready to use.",
     badge: null,
+  },
+  {
+    icon: "🌿",
+    title: "Duvet & Bedding — Launder & Press",
+    desc: "Complete bedding sets washed and ironed to a crisp finish. We handle full sets — duvet cover, sheets, and pillowcases — returned beautifully pressed and ready to put straight on the bed.",
+    badge: "Popular",
+  },
+  {
+    icon: "💍",
+    title: "Wedding & Prom Dress Preservation",
+    desc: "Your special dress deserves special care. We professionally clean wedding and prom dresses and can return them in a specially designed preservation box to protect them for years to come, or in a luxury gown bag.",
+    badge: "Special",
   },
   {
     icon: "🧺",
     title: "Service Washing",
-    desc: "Bag up your laundry and we'll wash, dry, and fold it for you. Perfect for busy households who want clean clothes without the effort.",
+    desc: "Bag up your laundry and we'll wash, dry, and fold it for you. Perfect for busy households who want clean clothes without the effort. Minimum order £20.",
     badge: "Popular",
   },
   {
@@ -129,12 +141,12 @@ export default function Services() {
                 Free Collection &amp; Delivery
               </h2>
               <p style={{ color: "#555", lineHeight: 1.65, marginBottom: "1.25rem", fontSize: "0.95rem" }}>
-                On all orders over £15, Sandra will collect your items from your doorstep and return them clean and fresh — completely free of charge.
+                On all orders over £20, Sandra will collect your items from your doorstep and return them clean and fresh — completely free of charge.
               </p>
               <div style={{ backgroundColor: "#F7941D", borderRadius: "0.75rem", padding: "1rem 1.25rem", display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.5rem" }}>
                 <span style={{ fontSize: "1.5rem" }}>🚚</span>
                 <span style={{ fontFamily: "Nunito, sans-serif", fontWeight: 800, color: "white", fontSize: "1rem" }}>
-                  FREE delivery on orders over £15
+                  FREE delivery on orders over £20
                 </span>
               </div>
               <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>

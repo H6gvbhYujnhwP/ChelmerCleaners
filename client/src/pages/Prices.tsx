@@ -1,17 +1,21 @@
 /*
   CHELMER CLEANERS — Prices Page
   Design: "Clean Lines, Bright Skies"
-  Mock price list tables — Sandra will supply real prices
-  Note: All prices are PLACEHOLDER values — to be updated by Sandra
+  Palette: Sky Blue #29ABE2 | Navy #1B3A6B | Orange #F7941D | Green #39B54A
+  Real prices from Sandra's price sheets (April 2026)
 */
 
-import { Link } from "wouter";
-import { Phone, ArrowRight, Info } from "lucide-react";
 import { motion } from "framer-motion";
+import { Phone, Info, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.06, duration: 0.45 } }),
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.08, duration: 0.45 },
+  }),
 };
 
 const categories = [
@@ -19,62 +23,79 @@ const categories = [
     title: "Dry Cleaning",
     icon: "👔",
     items: [
-      { item: "Suit (2 piece)", price: "£12.50" },
-      { item: "Suit (3 piece)", price: "£15.00" },
-      { item: "Jacket / Blazer", price: "£8.50" },
-      { item: "Trousers", price: "£5.50" },
-      { item: "Dress (standard)", price: "£9.00" },
-      { item: "Dress (evening/formal)", price: "£14.00" },
-      { item: "Coat / Overcoat", price: "£12.00" },
+      { item: "Suit (2 piece)", price: "£19.00" },
+      { item: "Suit (3 piece)", price: "£23.50" },
+      { item: "Jacket / Blazer", price: "£11.50" },
+      { item: "Trousers", price: "£8.50" },
+      { item: "Dress (standard)", price: "£19.00" },
+      { item: "Dress (evening/formal)", price: "£25.00" },
+      { item: "Coat / Overcoat", price: "£19.50" },
       { item: "Skirt", price: "£5.50" },
-      { item: "Blouse / Shirt", price: "£5.00" },
+      { item: "Blouse / Shirt", price: "£5.50" },
+      { item: "Tie", price: "£6.50" },
+      { item: "Knitwear", price: "£8.50" },
     ],
   },
   {
     title: "Household Items",
     icon: "🛏️",
+    note: "Duvets priced by fill type — Feather / Hollowfibre",
     items: [
-      { item: "Single Duvet", price: "£15.00" },
-      { item: "Double Duvet", price: "£18.00" },
-      { item: "King Size Duvet", price: "£22.00" },
-      { item: "Pillow (each)", price: "£5.00" },
+      { item: "Single Duvet — Feather", price: "£29.00" },
+      { item: "Single Duvet — Hollowfibre", price: "£25.00" },
+      { item: "Double Duvet — Feather", price: "£31.00" },
+      { item: "Double Duvet — Hollowfibre", price: "£27.00" },
+      { item: "King Size Duvet — Feather", price: "£33.00" },
+      { item: "King Size Duvet — Hollowfibre", price: "£29.00" },
+      { item: "Pillow (each)", price: "£11.00" },
+      { item: "Mattress Topper", price: "£38.00" },
       { item: "Curtains (per pair, small)", price: "£14.00" },
       { item: "Curtains (per pair, large)", price: "£22.00" },
-      { item: "Blanket", price: "£10.00" },
-      { item: "Bedspread", price: "£14.00" },
+      { item: "Blanket", price: "£15.00" },
+      { item: "Bedspread", price: "£30.00" },
+    ],
+  },
+  {
+    title: "Bedding — Launder & Press",
+    icon: "🌿",
+    note: "Complete set washed and ironed. Includes cover, sheet & pillowcases.",
+    items: [
+      { item: "Single Set (cover, sheet, 2 pillowcases)", price: "£20.00" },
+      { item: "Double Set (cover, sheet, 4 pillowcases)", price: "£25.00" },
+      { item: "King Set (cover, sheet, 4 pillowcases)", price: "£28.00" },
+      { item: "Super King Set (cover, sheet, 4 pillowcases)", price: "£30.00" },
+      { item: "Bedsheet (single) — iron only", price: "£2.00" },
+      { item: "Bedsheet (double/king) — iron only", price: "£3.00" },
+      { item: "Duvet cover (single) — iron only", price: "£3.00" },
+      { item: "Duvet cover (double/king) — iron only", price: "£4.00" },
     ],
   },
   {
     title: "Service Washing",
     icon: "🧺",
+    note: "Minimum order £20.00",
     items: [
-      { item: "Wash & Dry (per kg)", price: "£3.50" },
       { item: "Wash, Dry & Fold (per kg)", price: "£4.50" },
-      { item: "Minimum charge", price: "£8.00" },
     ],
   },
   {
     title: "Ironing",
-    icon: "🧹",
+    icon: "🪄",
     items: [
-      { item: "Shirt / Blouse", price: "£2.50" },
-      { item: "Trousers", price: "£2.50" },
-      { item: "Dress", price: "£3.50" },
-      { item: "Bedsheet (single)", price: "£2.00" },
-      { item: "Bedsheet (double/king)", price: "£3.00" },
-      { item: "Duvet cover (single)", price: "£3.00" },
-      { item: "Duvet cover (double/king)", price: "£4.00" },
+      { item: "Shirt / Blouse", price: "£3.00" },
+      { item: "Trousers", price: "£3.50" },
+      { item: "Dress", price: "£4.00" },
     ],
   },
   {
     title: "Repairs & Alterations",
     icon: "🪡",
     items: [
-      { item: "Button replacement (each)", price: "£2.00" },
-      { item: "Zip replacement (standard)", price: "£8.00" },
-      { item: "Hem (trousers/skirt)", price: "£7.00" },
-      { item: "Take in / let out (seam)", price: "£9.00" },
-      { item: "Patch repair", price: "£6.00" },
+      { item: "Button replacement (each)", price: "£3.50" },
+      { item: "Zip replacement (standard)", price: "£18.50" },
+      { item: "Hem (trousers/skirt)", price: "£18.00" },
+      { item: "Take in / let out (seam)", price: "£19.00" },
+      { item: "Patch repair", price: "£12.00" },
       { item: "Custom alterations", price: "POA" },
     ],
   },
@@ -82,22 +103,27 @@ const categories = [
 
 export default function Prices() {
   return (
-    <div style={{ overflowX: "hidden" }}>
-
-      {/* ── PAGE HEADER ── */}
-      <section style={{ backgroundColor: "#29ABE2", paddingTop: "3rem", paddingBottom: "0" }}>
-        <div className="container">
+    <div style={{ backgroundColor: "white" }}>
+      {/* ── HERO ── */}
+      <section style={{
+        background: "linear-gradient(135deg, #29ABE2 0%, #1B3A6B 100%)",
+        padding: "4rem 0 5rem",
+        position: "relative",
+        overflow: "hidden",
+      }}>
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <h1 style={{ fontFamily: "Nunito, sans-serif", fontWeight: 900, fontSize: "clamp(1.75rem, 6vw, 2.75rem)", color: "white", marginBottom: "0.75rem" }}>
+            <h1 style={{ fontFamily: "Nunito, sans-serif", fontWeight: 900, color: "white", fontSize: "clamp(2rem, 6vw, 3rem)", marginBottom: "0.75rem" }}>
               Price List
             </h1>
-            <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "1rem", lineHeight: 1.6, maxWidth: "520px", marginBottom: "1.5rem" }}>
-              Competitive prices for all our cleaning services. Free delivery on orders over £15.
+            <p style={{ color: "rgba(255,255,255,0.88)", fontSize: "1.05rem", maxWidth: "520px", lineHeight: 1.6 }}>
+              Competitive prices for all our cleaning services. Free collection &amp; delivery on orders over £20.
             </p>
           </motion.div>
         </div>
-        <div className="cloud-divider">
-          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        {/* Wave divider */}
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, lineHeight: 0 }}>
+          <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ display: "block", width: "100%", height: "60px" }}>
             <path d="M0,60 L0,30 Q80,0 160,22 Q240,44 320,22 Q400,0 480,22 Q560,44 640,22 Q720,0 800,22 Q880,44 960,22 Q1040,0 1120,22 Q1200,44 1280,22 Q1360,0 1440,22 L1440,60 Z" fill="white"/>
           </svg>
         </div>
@@ -136,7 +162,7 @@ export default function Prices() {
           }}>
             <span style={{ fontSize: "1.5rem" }}>🚚</span>
             <span style={{ fontFamily: "Nunito, sans-serif", fontWeight: 800, color: "white", fontSize: "1rem" }}>
-              FREE collection &amp; delivery on all orders over £15
+              FREE collection &amp; delivery on all orders over £20
             </span>
           </div>
         </div>
@@ -164,9 +190,14 @@ export default function Prices() {
                 {/* Table header */}
                 <div style={{ backgroundColor: "#1B3A6B", padding: "1rem 1.25rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
                   <span style={{ fontSize: "1.5rem" }}>{cat.icon}</span>
-                  <h3 style={{ fontFamily: "Nunito, sans-serif", fontWeight: 800, color: "white", fontSize: "1.1rem", margin: 0 }}>
-                    {cat.title}
-                  </h3>
+                  <div>
+                    <h3 style={{ fontFamily: "Nunito, sans-serif", fontWeight: 800, color: "white", fontSize: "1.1rem", margin: 0 }}>
+                      {cat.title}
+                    </h3>
+                    {cat.note && (
+                      <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "0.78rem", margin: "0.2rem 0 0" }}>{cat.note}</p>
+                    )}
+                  </div>
                 </div>
                 {/* Table rows */}
                 <table className="price-table">
@@ -194,8 +225,8 @@ export default function Prices() {
               <a href="tel:07855716659" className="btn-orange">
                 <Phone size={16} /> Call Sandra
               </a>
-              <Link href="/book" className="btn-navy">
-                Book a Collection <ArrowRight size={16} />
+              <Link href="/contact" className="btn-navy">
+                Send an Enquiry <ArrowRight size={16} />
               </Link>
             </div>
           </div>
