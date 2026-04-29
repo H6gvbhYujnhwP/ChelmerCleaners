@@ -14,8 +14,8 @@ const DELIVERY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/N
 const services = [
   { icon: "👔", label: "Dry Cleaning" },
   { icon: "🪟", label: "Curtains & Covers" },
-  { icon: "🛏️", label: "Duvets" },
-  { icon: "🌿", label: "Duvet & Bedding" },
+  { icon: "🛏️", label: "Duvets & Pillows" },
+  { icon: "🌿", label: "Bedding" },
   { icon: "💍", label: "Wedding & Prom Dresses" },
   { icon: "🧺", label: "Service Washing" },
   { icon: "🧹", label: "Ironing" },

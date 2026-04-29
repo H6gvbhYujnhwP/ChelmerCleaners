@@ -25,20 +25,20 @@ const services = [
   },
   {
     icon: "🛏️",
-    title: "Duvets — Laundered & Packaged",
-    desc: "Thorough duvet cleaning for all tog ratings and sizes — feather or hollowfibre. Every duvet is hygienically laundered and returned neatly packaged in a duvet bag, fresh and ready to use.",
+    title: "Duvets & Pillows — Laundered & Packaged",
+    desc: "Thorough cleaning for duvets and pillows of all sizes — feather or hollowfibre. Every item is hygienically laundered and returned neatly packaged in a duvet bag, fresh and ready to use.",
     badge: null,
   },
   {
     icon: "🌿",
-    title: "Duvet & Bedding — Launder & Press",
-    desc: "Complete bedding sets washed and ironed to a crisp finish. We handle full sets — duvet cover, sheets, and pillowcases — returned beautifully pressed and ready to put straight on the bed.",
+    title: "Bedding — Laundered & Pressed",
+    desc: "Complete bedding sets washed and pressed to a crisp finish. We handle full sets — duvet cover, sheets, and pillowcases — returned beautifully laundered and pressed, ready to put straight on the bed.",
     badge: "Popular",
   },
   {
     icon: "💍",
-    title: "Wedding & Prom Dress Preservation",
-    desc: "Your special dress deserves special care. We professionally clean wedding and prom dresses and can return them in a specially designed preservation box to protect them for years to come, or in a luxury gown bag.",
+    title: "Wedding, Bridesmaid & Prom Dress Cleaning",
+    desc: "Your special dress deserves special care. We professionally clean wedding, bridesmaid and prom dresses and can return them in a specially designed preservation box to protect them for years to come, or in a luxury gown bag.",
     badge: "Special",
   },
   {
