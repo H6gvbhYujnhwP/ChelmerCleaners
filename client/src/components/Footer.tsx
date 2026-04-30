@@ -78,23 +78,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Free delivery badge */}
-        <div style={{
-          marginTop: "2rem",
-          padding: "0.875rem 1.25rem",
-          backgroundColor: "#F7941D",
-          borderRadius: "0.75rem",
-          display: "flex",
-          alignItems: "center",
-          gap: "0.75rem",
-          flexWrap: "wrap",
-        }}>
-          <span style={{ fontSize: "1.5rem" }}>🚚</span>
-          <span style={{ fontFamily: "Nunito, sans-serif", fontWeight: 800, color: "white", fontSize: "1rem" }}>
-            FREE delivery on orders over £15
-          </span>
-        </div>
-
         {/* Bottom bar */}
         <div style={{
           marginTop: "2rem",
