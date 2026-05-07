@@ -6,9 +6,11 @@
 */
 
 import { motion } from "framer-motion";
-import { Phone, Info, ArrowRight, PanelLeftClose, Layers } from "lucide-react";
+import { Phone, Info, ArrowRight, Layers } from "lucide-react";
 import { Link } from "wouter";
 import type { ReactNode } from "react";
+
+const CURTAINS_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-curtains-ZfvkJr4TWVP8Qz8jcZXFo6.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -52,10 +54,17 @@ const categories: Category[] = [
       { item: "King Size Duvet — Hollowfibre", price: "£29.00" },
       { item: "Pillow (each)", price: "£11.00" },
       { item: "Mattress Topper", price: "£38.00" },
-      { item: "Curtains", price: "From £7 per sq metre" },
       { item: "Blanket", price: "From £15.00" },
-      { item: "Covers (sofa, cushion, garden furniture)", price: "From £8.00" },
       { item: "Bedspread", price: "£30.00" },
+    ],
+  },
+  {
+    title: "Curtains & Covers",
+    icon: <img src={CURTAINS_ICON} alt="Curtains" style={{ width: 28, height: 28, objectFit: "contain" }} />,
+    note: "Curtains cleaned per square metre. Covers include sofa, cushion & garden furniture.",
+    items: [
+      { item: "Curtains", price: "From £7 per sq metre" },
+      { item: "Covers (sofa, cushion, garden furniture)", price: "From £8.00" },
     ],
   },
   {

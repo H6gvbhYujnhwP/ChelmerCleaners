@@ -5,9 +5,11 @@
 */
 
 import { Link } from "wouter";
-import { Phone, ArrowRight, PanelLeftClose, Layers } from "lucide-react";
+import { Phone, ArrowRight, Layers } from "lucide-react";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+
+const CURTAINS_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-curtains-ZfvkJr4TWVP8Qz8jcZXFo6.webp";
 
 const SERVICES_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/chelmer-services-KiDWcXu7Q3C4jFAY8G3JFn.webp";
 
@@ -21,7 +23,7 @@ const services: Service[] = [
     badge: null,
   },
   {
-    icon: <PanelLeftClose size={36} color="#29ABE2" strokeWidth={1.75} />,
+    icon: <img src={CURTAINS_ICON} alt="Curtains" style={{ width: 40, height: 40, objectFit: "contain" }} />,
     title: "Curtains & Covers",
     desc: "Full cleaning service for curtains of all sizes and fabrics, plus sofa cushion covers, scatter cushions, and garden furniture covers. Collected, cleaned, and returned ready to use.",
     badge: null,
