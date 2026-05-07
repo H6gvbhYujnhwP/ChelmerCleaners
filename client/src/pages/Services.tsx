@@ -11,6 +11,7 @@ import type { ReactNode } from "react";
 
 const CURTAINS_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-curtains-ZfvkJr4TWVP8Qz8jcZXFo6.webp";
 const DUVETS_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-duvets-pillows-MMdBMo7SWACSZv9oqfzTSS.webp";
+const IRON_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-iron-HZwvhCX6Ltro9XfX9YwSmb.webp";
 
 const SERVICES_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/chelmer-services-KiDWcXu7Q3C4jFAY8G3JFn.webp";
 
@@ -54,7 +55,7 @@ const services: Service[] = [
     badge: "Popular",
   },
   {
-    icon: "👕",
+    icon: <img src={IRON_ICON} alt="Ironing" style={{ width: 40, height: 40, objectFit: "contain" }} />,
     title: "Ironing",
     desc: "Crisp, professionally ironed shirts, blouses, trousers and more. Returned on hangers or neatly folded — your choice.",
     badge: "Popular",

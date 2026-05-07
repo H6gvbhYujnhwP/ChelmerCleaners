@@ -12,6 +12,7 @@ import type { ReactNode } from "react";
 
 const CURTAINS_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-curtains-ZfvkJr4TWVP8Qz8jcZXFo6.webp";
 const DUVETS_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-duvets-pillows-MMdBMo7SWACSZv9oqfzTSS.webp";
+const IRON_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-iron-HZwvhCX6Ltro9XfX9YwSmb.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -89,7 +90,7 @@ const categories: Category[] = [
   },
   {
     title: "Ironing",
-    icon: "👕",
+    icon: <img src={IRON_ICON} alt="Ironing" style={{ width: 28, height: 28, objectFit: "contain" }} />,
     items: [
       { item: "Shirt / Blouse", price: "£3.00" },
       { item: "Trousers", price: "£3.50" },
