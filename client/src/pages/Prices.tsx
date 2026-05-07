@@ -6,11 +6,12 @@
 */
 
 import { motion } from "framer-motion";
-import { Phone, Info, ArrowRight, Layers } from "lucide-react";
+import { Phone, Info, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import type { ReactNode } from "react";
 
 const CURTAINS_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-curtains-ZfvkJr4TWVP8Qz8jcZXFo6.webp";
+const DUVETS_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-duvets-pillows-MMdBMo7SWACSZv9oqfzTSS.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -43,7 +44,7 @@ const categories: Category[] = [
   },
   {
     title: "Household Items",
-    icon: <Layers size={24} color="white" strokeWidth={1.75} />,
+    icon: <img src={DUVETS_ICON} alt="Duvets & Pillows" style={{ width: 28, height: 28, objectFit: "contain" }} />,
     note: "Duvets priced by fill type — Feather / Hollowfibre",
     items: [
       { item: "Single Duvet — Feather", price: "£29.00" },

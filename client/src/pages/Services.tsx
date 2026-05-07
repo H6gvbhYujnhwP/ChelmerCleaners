@@ -5,11 +5,12 @@
 */
 
 import { Link } from "wouter";
-import { Phone, ArrowRight, Layers } from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
 const CURTAINS_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-curtains-ZfvkJr4TWVP8Qz8jcZXFo6.webp";
+const DUVETS_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-duvets-pillows-MMdBMo7SWACSZv9oqfzTSS.webp";
 
 const SERVICES_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/chelmer-services-KiDWcXu7Q3C4jFAY8G3JFn.webp";
 
@@ -29,7 +30,7 @@ const services: Service[] = [
     badge: null,
   },
   {
-    icon: <Layers size={36} color="#29ABE2" strokeWidth={1.75} />,
+    icon: <img src={DUVETS_ICON} alt="Duvets & Pillows" style={{ width: 40, height: 40, objectFit: "contain" }} />,
     title: "Duvets & Pillows — Laundered & Packaged",
     desc: "Thorough cleaning for duvets and pillows of all sizes — feather or hollowfibre. Every item is hygienically laundered and returned neatly packaged in a duvet bag, fresh and ready to use.",
     badge: null,
