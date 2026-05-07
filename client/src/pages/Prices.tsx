@@ -6,8 +6,9 @@
 */
 
 import { motion } from "framer-motion";
-import { Phone, Info, ArrowRight } from "lucide-react";
+import { Phone, Info, ArrowRight, PanelLeftClose, Layers } from "lucide-react";
 import { Link } from "wouter";
+import type { ReactNode } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -18,7 +19,9 @@ const fadeUp = {
   }),
 };
 
-const categories = [
+type Category = { title: string; icon: string | ReactNode; note?: string; items: { item: string; price: string }[] };
+
+const categories: Category[] = [
   {
     title: "Dry Cleaning",
     icon: "👔",
@@ -38,7 +41,7 @@ const categories = [
   },
   {
     title: "Household Items",
-    icon: "🪶",
+    icon: <Layers size={24} color="white" strokeWidth={1.75} />,
     note: "Duvets priced by fill type — Feather / Hollowfibre",
     items: [
       { item: "Single Duvet — Feather", price: "£29.00" },
@@ -186,7 +189,7 @@ export default function Prices() {
               >
                 {/* Table header */}
                 <div style={{ backgroundColor: "#1B3A6B", padding: "1rem 1.25rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                  <span style={{ fontSize: "1.5rem" }}>{cat.icon}</span>
+                  <span style={{ fontSize: "1.5rem", display: "flex", alignItems: "center" }}>{cat.icon}</span>
                   <div>
                     <h3 style={{ fontFamily: "Nunito, sans-serif", fontWeight: 800, color: "white", fontSize: "1.1rem", margin: 0 }}>
                       {cat.title}

@@ -5,19 +5,22 @@
 */
 
 import { Link } from "wouter";
-import { Phone, Truck, Star, CheckCircle, ArrowRight } from "lucide-react";
+import { Phone, Truck, Star, CheckCircle, ArrowRight, PanelLeftClose, Layers } from "lucide-react";
 import { motion } from "framer-motion";
+import type { ReactNode } from "react";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/chelmer-hero-gJ22o7Wezyog9tcZta3KJ9.webp";
 const DELIVERY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/chelmer-delivery-ArfHaCcKkYoJcUtFeiiMz7.webp";
 
-const services = [
+type ServiceItem = { icon: string | ReactNode; label: string };
+
+const services: ServiceItem[] = [
   { icon: "👔", label: "Dry Cleaning" },
-  { icon: "🪞", label: "Curtains & Covers" },
-  { icon: "🪶", label: "Duvets & Pillows" },
+  { icon: <PanelLeftClose size={28} color="#29ABE2" strokeWidth={1.75} />, label: "Curtains & Covers" },
+  { icon: <Layers size={28} color="#29ABE2" strokeWidth={1.75} />, label: "Duvets & Pillows" },
   { icon: "🛏️", label: "Bedding" },
   { icon: "💍", label: "Wedding & Prom Dresses" },
-  { icon: "🧺", label: "Service Washing" },
+  { icon: "🧹", label: "Service Washing" },
   { icon: "👕", label: "Ironing" },
   { icon: "🪡", label: "Repairs & Alterations" },
 ];
@@ -163,7 +166,7 @@ export default function Home() {
                 variants={fadeUp}
                 style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}
               >
-                <span style={{ fontSize: "1.75rem" }}>{s.icon}</span>
+                <span style={{ fontSize: "1.75rem", display: "flex", alignItems: "center" }}>{s.icon}</span>
                 <span style={{ fontFamily: "Nunito, sans-serif", fontWeight: 700, color: "#1B3A6B", fontSize: "0.95rem" }}>{s.label}</span>
               </motion.div>
             ))}

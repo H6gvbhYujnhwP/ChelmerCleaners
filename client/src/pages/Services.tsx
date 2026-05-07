@@ -5,12 +5,15 @@
 */
 
 import { Link } from "wouter";
-import { Phone, ArrowRight } from "lucide-react";
+import { Phone, ArrowRight, PanelLeftClose, Layers } from "lucide-react";
 import { motion } from "framer-motion";
+import type { ReactNode } from "react";
 
 const SERVICES_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/chelmer-services-KiDWcXu7Q3C4jFAY8G3JFn.webp";
 
-const services = [
+type Service = { icon: string | ReactNode; title: string; desc: string; badge: string | null };
+
+const services: Service[] = [
   {
     icon: "👔",
     title: "Dry Cleaning",
@@ -18,13 +21,13 @@ const services = [
     badge: null,
   },
   {
-    icon: "🪞",
+    icon: <PanelLeftClose size={36} color="#29ABE2" strokeWidth={1.75} />,
     title: "Curtains & Covers",
     desc: "Full cleaning service for curtains of all sizes and fabrics, plus sofa cushion covers, scatter cushions, and garden furniture covers. Collected, cleaned, and returned ready to use.",
     badge: null,
   },
   {
-    icon: "🪶",
+    icon: <Layers size={36} color="#29ABE2" strokeWidth={1.75} />,
     title: "Duvets & Pillows — Laundered & Packaged",
     desc: "Thorough cleaning for duvets and pillows of all sizes — feather or hollowfibre. Every item is hygienically laundered and returned neatly packaged in a duvet bag, fresh and ready to use.",
     badge: null,
@@ -110,7 +113,7 @@ export default function Services() {
                 variants={fadeUp}
               >
                 <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}>
-                  <span style={{ fontSize: "2.25rem", flexShrink: 0 }}>{s.icon}</span>
+                  <span style={{ fontSize: "2.25rem", flexShrink: 0, display: "flex", alignItems: "center" }}>{s.icon}</span>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.4rem", flexWrap: "wrap" }}>
                       <h3 style={{ fontFamily: "Nunito, sans-serif", fontWeight: 800, color: "#1B3A6B", fontSize: "1.1rem", margin: 0 }}>
