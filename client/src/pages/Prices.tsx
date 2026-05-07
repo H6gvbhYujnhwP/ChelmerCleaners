@@ -38,7 +38,7 @@ const categories = [
   },
   {
     title: "Household Items",
-    icon: "🛏️",
+    icon: "🪶",
     note: "Duvets priced by fill type — Feather / Hollowfibre",
     items: [
       { item: "Single Duvet — Feather", price: "£29.00" },
@@ -57,7 +57,7 @@ const categories = [
   },
   {
     title: "Bedding — Laundered & Pressed",
-    icon: "🌿",
+    icon: "🛏️",
     note: "Complete set laundered and pressed. Includes cover, sheet & pillowcases.",
     items: [
       { item: "Single Set (cover, sheet, 2 pillowcases)", price: "£20.00" },
@@ -76,7 +76,7 @@ const categories = [
   },
   {
     title: "Ironing",
-    icon: "🪄",
+    icon: "👕",
     items: [
       { item: "Shirt / Blouse", price: "£3.00" },
       { item: "Trousers", price: "£3.50" },

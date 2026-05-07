@@ -18,19 +18,19 @@ const services = [
     badge: null,
   },
   {
-    icon: "🪟",
+    icon: "🪞",
     title: "Curtains & Covers",
     desc: "Full cleaning service for curtains of all sizes and fabrics, plus sofa cushion covers, scatter cushions, and garden furniture covers. Collected, cleaned, and returned ready to use.",
     badge: null,
   },
   {
-    icon: "🛏️",
+    icon: "🪶",
     title: "Duvets & Pillows — Laundered & Packaged",
     desc: "Thorough cleaning for duvets and pillows of all sizes — feather or hollowfibre. Every item is hygienically laundered and returned neatly packaged in a duvet bag, fresh and ready to use.",
     badge: null,
   },
   {
-    icon: "🌿",
+    icon: "🛏️",
     title: "Bedding — Laundered & Pressed",
     desc: "Complete bedding sets washed and pressed to a crisp finish. We handle full sets — duvet cover, sheets, and pillowcases — returned beautifully laundered and pressed, ready to put straight on the bed.",
     badge: "Popular",
@@ -48,7 +48,7 @@ const services = [
     badge: "Popular",
   },
   {
-    icon: "🧹",
+    icon: "👕",
     title: "Ironing",
     desc: "Crisp, professionally ironed shirts, blouses, trousers and more. Returned on hangers or neatly folded — your choice.",
     badge: "Popular",
@@ -58,6 +58,12 @@ const services = [
     title: "Repairs & Alterations",
     desc: "From replacing a button to taking in a dress, Sandra offers a range of clothing repairs and alterations to keep your wardrobe in top condition.",
     badge: null,
+  },
+  {
+    icon: "🏢",
+    title: "Corporate & Business Accounts",
+    desc: "Chelmer Cleaners can provide tailored cleaning solutions for businesses of all sizes — from staff uniforms and workwear to hospitality linens and corporate garments. Contact Sandra to discuss your requirements and receive a bespoke quote.",
+    badge: "Enquire",
   },
 ];
 
