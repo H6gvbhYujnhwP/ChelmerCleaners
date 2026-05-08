@@ -5,23 +5,29 @@
 */
 
 import { Link } from "wouter";
-import { Phone, Truck, Star, CheckCircle, ArrowRight, PanelLeftClose, Layers } from "lucide-react";
+import { Phone, Truck, Star, CheckCircle, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+
+const CURTAINS_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-curtains-ZfvkJr4TWVP8Qz8jcZXFo6.webp";
+const DUVETS_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-duvets-pillows-MMdBMo7SWACSZv9oqfzTSS.webp";
+const IRON_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/icon-iron-HZwvhCX6Ltro9XfX9YwSmb.webp";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/chelmer-hero-gJ22o7Wezyog9tcZta3KJ9.webp";
 const DELIVERY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/Nf6Hjaym7JRvVDcK4DDdeK/chelmer-delivery-ArfHaCcKkYoJcUtFeiiMz7.webp";
 
 type ServiceItem = { icon: string | ReactNode; label: string };
 
+const mkImg = (src: string, alt: string) => <img src={src} alt={alt} style={{ width: 32, height: 32, objectFit: "contain" }} />;
+
 const services: ServiceItem[] = [
   { icon: "👔", label: "Dry Cleaning" },
-  { icon: <PanelLeftClose size={28} color="#29ABE2" strokeWidth={1.75} />, label: "Curtains & Covers" },
-  { icon: <Layers size={28} color="#29ABE2" strokeWidth={1.75} />, label: "Duvets & Pillows" },
+  { icon: mkImg(CURTAINS_ICON, "Curtains & Covers"), label: "Curtains & Covers" },
+  { icon: mkImg(DUVETS_ICON, "Duvets & Pillows"), label: "Duvets & Pillows" },
   { icon: "🛏️", label: "Bedding" },
   { icon: "💍", label: "Wedding & Prom Dresses" },
-  { icon: "🧹", label: "Service Washing" },
-  { icon: "👕", label: "Ironing" },
+  { icon: "🧺", label: "Service Washing" },
+  { icon: mkImg(IRON_ICON, "Ironing"), label: "Ironing" },
   { icon: "🪡", label: "Repairs & Alterations" },
 ];
 
