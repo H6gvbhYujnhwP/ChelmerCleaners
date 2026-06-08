@@ -1,36 +1,15 @@
 /*
   CHELMER CLEANERS — Contact Page
   Design: "Clean Lines, Bright Skies"
-  Prominent phone, enquiry form (Formspree-ready), service area info
-  TODO: Replace FORMSPREE_ENDPOINT with real Formspree form ID
+  Prominent phone, enquiry form live via Formspree (mdavgpwo), service area info
 */
 
-import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { Phone, Mail, Globe, CheckCircle, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitting(true);
-    // TODO: Replace with real Formspree endpoint
-    // const res = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json", Accept: "application/json" },
-    //   body: JSON.stringify(formData),
-    // });
-    await new Promise((r) => setTimeout(r, 1000));
-    setSubmitting(false);
-    setSubmitted(true);
-  };
+  const [state, handleSubmit] = useForm("mdavgpwo");
 
   return (
     <div style={{ overflowX: "hidden" }}>
@@ -139,7 +118,7 @@ export default function Contact() {
 
             {/* ── ENQUIRY FORM ── */}
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.15 }}>
-              {submitted ? (
+              {state.succeeded ? (
                 <div style={{
                   textAlign: "center",
                   backgroundColor: "#EEF8FD",
@@ -152,7 +131,7 @@ export default function Contact() {
                     Message Sent!
                   </h2>
                   <p style={{ color: "#555", lineHeight: 1.65 }}>
-                    Thanks, <strong>{formData.name}</strong>! Sandra will be in touch with you soon.
+                    Thank you! Sandra will be in touch with you soon.
                   </p>
                 </div>
               ) : (
@@ -160,40 +139,42 @@ export default function Contact() {
                   <h2 style={{ fontFamily: "Nunito, sans-serif", fontWeight: 800, color: "#1B3A6B", fontSize: "1.25rem", marginBottom: "1.25rem" }}>
                     Send an Enquiry
                   </h2>
-                  {/* Formspree-ready form */}
-                  {/* TODO: Add action="https://formspree.io/f/YOUR_ID" method="POST" when live */}
                   <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                     <div>
-                      <label style={labelStyle}>Your Name *</label>
-                      <input type="text" name="name" required value={formData.name} onChange={handleChange} placeholder="e.g. Jane Smith" style={inputStyle} />
+                      <label style={labelStyle} htmlFor="contact-name">Your Name *</label>
+                      <input id="contact-name" type="text" name="name" required placeholder="e.g. Jane Smith" style={inputStyle} />
+                      <ValidationError field="name" prefix="Name" errors={state.errors} style={{ color: "#e53e3e", fontSize: "0.8rem" }} />
                     </div>
                     <div>
-                      <label style={labelStyle}>Phone Number *</label>
-                      <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} placeholder="e.g. 07700 900000" style={inputStyle} />
+                      <label style={labelStyle} htmlFor="contact-phone">Phone Number *</label>
+                      <input id="contact-phone" type="tel" name="phone" required placeholder="e.g. 07700 900000" style={inputStyle} />
+                      <ValidationError field="phone" prefix="Phone" errors={state.errors} style={{ color: "#e53e3e", fontSize: "0.8rem" }} />
                     </div>
                     <div>
-                      <label style={labelStyle}>Email Address</label>
-                      <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="e.g. jane@example.com" style={inputStyle} />
+                      <label style={labelStyle} htmlFor="contact-email">Email Address</label>
+                      <input id="contact-email" type="email" name="email" placeholder="e.g. jane@example.com" style={inputStyle} />
+                      <ValidationError field="email" prefix="Email" errors={state.errors} style={{ color: "#e53e3e", fontSize: "0.8rem" }} />
                     </div>
                     <div>
-                      <label style={labelStyle}>Your Message *</label>
+                      <label style={labelStyle} htmlFor="contact-message">Your Message *</label>
                       <textarea
+                        id="contact-message"
                         name="message"
                         required
-                        value={formData.message}
-                        onChange={handleChange}
                         placeholder="Tell Sandra what you need — items to clean, questions about pricing, or anything else..."
                         rows={5}
                         style={{ ...inputStyle, resize: "vertical", minHeight: "120px" }}
                       />
+                      <ValidationError field="message" prefix="Message" errors={state.errors} style={{ color: "#e53e3e", fontSize: "0.8rem" }} />
                     </div>
+                    <ValidationError errors={state.errors} style={{ color: "#e53e3e", fontSize: "0.85rem" }} />
                     <button
                       type="submit"
-                      disabled={submitting}
+                      disabled={state.submitting}
                       className="btn-orange"
-                      style={{ justifyContent: "center", opacity: submitting ? 0.7 : 1, width: "100%", fontSize: "1rem" }}
+                      style={{ justifyContent: "center", opacity: state.submitting ? 0.7 : 1, width: "100%", fontSize: "1rem" }}
                     >
-                      {submitting ? "Sending..." : "Send Message"}
+                      {state.submitting ? "Sending..." : "Send Message"}
                     </button>
                     <p style={{ color: "#888", fontSize: "0.8rem", textAlign: "center" }}>
                       We aim to respond within a few hours during business hours.

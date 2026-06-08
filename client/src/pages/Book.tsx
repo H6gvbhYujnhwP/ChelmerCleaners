@@ -2,56 +2,28 @@
   CHELMER CLEANERS — Book a Collection Page
   Design: "Clean Lines, Bright Skies"
   Bookings confirmed via telephone or email — no live calendar.
-  Enquiry form is Formspree-ready.
-  TODO: Replace YOUR_FORM_ID with real Formspree form ID when ready.
+  Formspree endpoint: https://formspree.io/f/mdavgpwo
 */
 
-import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { Phone, Mail, CheckCircle, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
 
 const SERVICES_LIST = [
   "Dry Cleaning",
   "Curtains & Covers",
-  "Duvets — Laundered & Packaged",
-  "Duvet & Bedding — Launder & Press",
-  "Wedding & Prom Dress Preservation",
+  "Duvets & Pillows — Laundered & Packaged",
+  "Bedding — Laundered & Pressed",
+  "Wedding, Bridesmaid & Prom Dress Cleaning",
   "Service Washing",
   "Ironing",
   "Repairs & Alterations",
+  "Corporate / Business",
   "Mixed / Multiple Services",
 ];
 
 export default function Book() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    address: "",
-    service: "",
-    preferredDay: "",
-    notes: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitting(true);
-    // TODO: Uncomment and replace YOUR_FORM_ID with real Formspree form ID
-    // const res = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json", Accept: "application/json" },
-    //   body: JSON.stringify(formData),
-    // });
-    await new Promise((r) => setTimeout(r, 1200));
-    setSubmitting(false);
-    setSubmitted(true);
-  };
+  const [state, handleSubmit] = useForm("mdavgpwo");
 
   return (
     <div style={{ overflowX: "hidden" }}>
@@ -162,7 +134,7 @@ export default function Book() {
           </div>
 
           {/* ── ENQUIRY FORM ── */}
-          {submitted ? (
+          {state.succeeded ? (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -182,7 +154,7 @@ export default function Book() {
                 Request Sent!
               </h2>
               <p style={{ color: "#555", lineHeight: 1.65, marginBottom: "1.5rem" }}>
-                Thank you, <strong>{formData.name}</strong>! Sandra will be in touch shortly to confirm your collection slot.
+                Thank you! Sandra will be in touch shortly to confirm your collection slot.
               </p>
               <p style={{ color: "#555", fontSize: "0.9rem" }}>
                 Need to speak to Sandra urgently? Call <a href="tel:07855716659" style={{ color: "#39B54A", fontWeight: 700 }}>07855 716659</a>.
@@ -209,50 +181,57 @@ export default function Book() {
 
                 <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "1rem" }} className="form-row">
                   <div>
-                    <label className="form-label">Your Name *</label>
-                    <input className="form-input" name="name" required value={formData.name} onChange={handleChange} placeholder="e.g. Jane Smith" />
+                    <label className="form-label" htmlFor="book-name">Your Name *</label>
+                    <input id="book-name" className="form-input" name="name" required placeholder="e.g. Jane Smith" />
+                    <ValidationError field="name" prefix="Name" errors={state.errors} style={{ color: "#e53e3e", fontSize: "0.8rem" }} />
                   </div>
                   <div>
-                    <label className="form-label">Phone Number *</label>
-                    <input className="form-input" name="phone" required value={formData.phone} onChange={handleChange} placeholder="e.g. 07700 900000" />
+                    <label className="form-label" htmlFor="book-phone">Phone Number *</label>
+                    <input id="book-phone" className="form-input" name="phone" required placeholder="e.g. 07700 900000" />
+                    <ValidationError field="phone" prefix="Phone" errors={state.errors} style={{ color: "#e53e3e", fontSize: "0.8rem" }} />
                   </div>
                 </div>
 
                 <div>
-                  <label className="form-label">Email Address</label>
-                  <input className="form-input" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="e.g. jane@email.com" />
+                  <label className="form-label" htmlFor="book-email">Email Address</label>
+                  <input id="book-email" className="form-input" name="email" type="email" placeholder="e.g. jane@email.com" />
+                  <ValidationError field="email" prefix="Email" errors={state.errors} style={{ color: "#e53e3e", fontSize: "0.8rem" }} />
                 </div>
 
                 <div>
-                  <label className="form-label">Collection Address *</label>
-                  <input className="form-input" name="address" required value={formData.address} onChange={handleChange} placeholder="Your full address including postcode" />
+                  <label className="form-label" htmlFor="book-address">Collection Address *</label>
+                  <input id="book-address" className="form-input" name="address" required placeholder="Your full address including postcode" />
+                  <ValidationError field="address" prefix="Address" errors={state.errors} style={{ color: "#e53e3e", fontSize: "0.8rem" }} />
                 </div>
 
                 <div>
-                  <label className="form-label">Service Required *</label>
-                  <select className="form-input" name="service" required value={formData.service} onChange={handleChange}>
-                    <option value="">Select a service...</option>
+                  <label className="form-label" htmlFor="book-service">Service Required *</label>
+                  <select id="book-service" className="form-input" name="service" required defaultValue="">
+                    <option value="" disabled>Select a service...</option>
                     {SERVICES_LIST.map((s) => (
                       <option key={s} value={s}>{s}</option>
                     ))}
                   </select>
+                  <ValidationError field="service" prefix="Service" errors={state.errors} style={{ color: "#e53e3e", fontSize: "0.8rem" }} />
                 </div>
 
                 <div>
-                  <label className="form-label">Preferred Collection Day</label>
-                  <input className="form-input" name="preferredDay" value={formData.preferredDay} onChange={handleChange} placeholder="e.g. Monday morning, any weekday afternoon" />
+                  <label className="form-label" htmlFor="book-day">Preferred Collection Day</label>
+                  <input id="book-day" className="form-input" name="preferredDay" placeholder="e.g. Monday morning, any weekday afternoon" />
                 </div>
 
                 <div>
-                  <label className="form-label">Additional Notes</label>
-                  <textarea className="form-input" name="notes" value={formData.notes} onChange={handleChange} rows={3} placeholder="Any special instructions, item details, or questions for Sandra..." style={{ resize: "vertical" }} />
+                  <label className="form-label" htmlFor="book-notes">Additional Notes</label>
+                  <textarea id="book-notes" className="form-input" name="notes" rows={3} placeholder="Any special instructions, item details, or questions for Sandra..." style={{ resize: "vertical" }} />
                 </div>
+
+                <ValidationError errors={state.errors} style={{ color: "#e53e3e", fontSize: "0.85rem" }} />
 
                 <button
                   type="submit"
-                  disabled={submitting}
+                  disabled={state.submitting}
                   style={{
-                    backgroundColor: submitting ? "#aaa" : "#F7941D",
+                    backgroundColor: state.submitting ? "#aaa" : "#F7941D",
                     color: "white",
                     fontFamily: "Nunito, sans-serif",
                     fontWeight: 800,
@@ -260,7 +239,7 @@ export default function Book() {
                     padding: "0.875rem 1.5rem",
                     borderRadius: "9999px",
                     border: "none",
-                    cursor: submitting ? "not-allowed" : "pointer",
+                    cursor: state.submitting ? "not-allowed" : "pointer",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -268,7 +247,7 @@ export default function Book() {
                     transition: "background-color 0.2s",
                   }}
                 >
-                  {submitting ? "Sending..." : "Send Booking Request"}
+                  {state.submitting ? "Sending..." : "Send Booking Request"}
                 </button>
 
                 <p style={{ color: "#888", fontSize: "0.8rem", textAlign: "center", margin: 0 }}>
