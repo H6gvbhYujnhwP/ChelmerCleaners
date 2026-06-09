@@ -91,7 +91,7 @@ export default function Book() {
             </a>
 
             {/* Email */}
-            <a href="mailto:info@chelmercleaners.co.uk" style={{ textDecoration: "none" }}>
+            <a href="mailto:sandra@chelmercleaners.co.uk" style={{ textDecoration: "none" }}>
               <div style={{
                 backgroundColor: "#1B3A6B",
                 borderRadius: "1rem",
@@ -113,7 +113,7 @@ export default function Book() {
                     Send an Email
                   </div>
                   <div style={{ fontFamily: "Nunito, sans-serif", fontWeight: 700, color: "rgba(255,255,255,0.9)", fontSize: "1rem" }}>
-                    info@chelmercleaners.co.uk
+                    sandra@chelmercleaners.co.uk
                   </div>
                   <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.82rem", marginTop: "0.2rem" }}>
                     Sandra will reply to confirm your slot
