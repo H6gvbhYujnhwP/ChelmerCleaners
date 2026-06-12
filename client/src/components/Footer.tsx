@@ -45,13 +45,13 @@ export default function Footer() {
               07855 716659
             </a>
             <a
-              href="https://www.chelmercleaners.co.uk"
+              href="https://www.chelmercleaners.com"
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "rgba(255,255,255,0.7)", fontSize: "0.9rem", textDecoration: "none" }}
             >
               <Globe size={16} />
-              www.chelmercleaners.co.uk
+              www.chelmercleaners.com
             </a>
           </div>
 

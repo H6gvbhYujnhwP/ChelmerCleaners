@@ -90,8 +90,8 @@ export default function Contact() {
                   <Globe size={22} color="#29ABE2" style={{ flexShrink: 0 }} />
                   <div>
                     <div style={{ fontFamily: "Nunito, sans-serif", fontWeight: 700, color: "#1B3A6B", fontSize: "0.9rem" }}>Website</div>
-                    <a href="https://www.chelmercleaners.co.uk" target="_blank" rel="noopener noreferrer" style={{ color: "#29ABE2", fontSize: "0.875rem" }}>
-                      www.chelmercleaners.co.uk
+                    <a href="https://www.chelmercleaners.com" target="_blank" rel="noopener noreferrer" style={{ color: "#29ABE2", fontSize: "0.875rem" }}>
+                      www.chelmercleaners.com
                     </a>
                   </div>
                 </div>
